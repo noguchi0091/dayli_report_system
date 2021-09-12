@@ -2,16 +2,16 @@ package actions;
 
 
 import java.io.IOException;
-import java.util.List; //追記
+import java.util.List;
 
 import javax.servlet.ServletException;
 
-import actions.views.EmployeeView; //追記
-import actions.views.ReportView; //追記
+import actions.views.EmployeeView;
+import actions.views.ReportView;
 import constants.AttributeConst;
 import constants.ForwardConst;
-import constants.JpaConst;  //追記
-import services.ReportService;  //追記
+import constants.JpaConst;
+import services.ReportService;
 
 /**
  * トップページに関する処理を行うActionクラス
@@ -19,7 +19,7 @@ import services.ReportService;  //追記
  */
 public class TopAction extends ActionBase {
 
-    private ReportService service; //追記
+    private ReportService service;
 
     /**
      * indexメソッドを実行する
@@ -27,12 +27,12 @@ public class TopAction extends ActionBase {
     @Override
     public void process() throws ServletException, IOException {
 
-        service = new ReportService(); //追記
+        service = new ReportService();
 
         //メソッドを実行
         invoke();
 
-        service.close(); //追記
+        service.close();
 
     }
 
@@ -40,8 +40,6 @@ public class TopAction extends ActionBase {
      * 一覧画面を表示する
      */
     public void index() throws ServletException, IOException {
-
-        // 以下追記
 
         //セッションからログイン中の従業員情報を取得
         EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
@@ -57,8 +55,6 @@ public class TopAction extends ActionBase {
         putRequestScope(AttributeConst.REP_COUNT, myReportsCount); //ログイン中の従業員が作成した日報の数
         putRequestScope(AttributeConst.PAGE, page); //ページ数
         putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
-
-        //↑ここまで追記
 
         //セッションにフラッシュメッセージが設定されている場合はリクエストスコープに移し替え、セッションからは削除する
         String flush = getSessionScope(AttributeConst.FLUSH);
