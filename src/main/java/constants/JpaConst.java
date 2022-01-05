@@ -40,9 +40,20 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
+    //出退勤時間テーブル
+    String TABLE_SHUT = "shuttaikin"; //テーブル名
+    //出退勤テーブルカラム
+    String SHUT_COL_ID = "id"; //id
+    String SHUT_COL_SHUKKIN_AT = "shukkinTime"; //出勤時間
+    String SHUT_COL_TAIKIN_AT = "taikinTime"; //退勤時間
+    String SHUT_COL_EMP = "employee_id"; //従業員id
+    String SHUT_COL_DAY = "shukkinDay"; //出勤日
+    String SHUT_COL_RIYUU = "shuuseiRiyuu"; //修正理由
+
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
+    String ENTITY_SHUT = "shuttaikin"; //出退勤時間
 
     //JPQL内パラメータ
     String JPQL_PARM_CODE = "code"; //社員番号
