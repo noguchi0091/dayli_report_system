@@ -1,6 +1,5 @@
 package models;
 
-
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -8,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import constants.JpaConst;
@@ -21,7 +22,6 @@ import lombok.Setter;
  *
  */
 @Table(name = JpaConst.TABLE_SHUT)
-
 
 @Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
 @Setter //全てのクラスフィールドについてsetterを自動生成する(Lombok)
@@ -47,27 +47,26 @@ public class Shuttaikin {
     /**
      * 退勤時間
      */
-   @Column(name = JpaConst.SHUT_COL_TAIKIN_AT, nullable = true)
-   private LocalDateTime taikinJikan;
+    @Column(name = JpaConst.SHUT_COL_TAIKIN_AT, nullable = true)
+    private LocalDateTime taikinJikan;
 
-   /**
+    /**
     * 従業員
     */
-  @Column(name = JpaConst.SHUT_COL_EMP, nullable = false)
-  private Employee juugyouin;
+    @ManyToOne
+    @JoinColumn(name = JpaConst.SHUT_COL_EMP, nullable = false)
+    private Employee juugyouin;
 
-  /**
-   * 出勤日
-   */
-  @Column(name = JpaConst.SHUT_COL_DAY, nullable = false )
-  private LocalDateTime shukkinbi;
+    /**
+     * 出勤日
+     */
+    @Column(name = JpaConst.SHUT_COL_DAY, nullable = false)
+    private LocalDateTime shukkinbi;
 
-  /**
-   * 修正理由
-   */
-  @Column(name = JpaConst.SHUT_COL_RIYUU, nullable = true)
-  private String shuuseiRiyuu;
-
-
+    /**
+     * 修正理由
+     */
+    @Column(name = JpaConst.SHUT_COL_RIYUU, nullable = true)
+    private String shuuseiRiyuu;
 
 }

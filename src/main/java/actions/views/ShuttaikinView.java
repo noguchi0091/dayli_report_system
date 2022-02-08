@@ -1,5 +1,7 @@
 package actions.views;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,12 +27,12 @@ public class ShuttaikinView {
     /**
      * 出勤時間
      */
-    private String shukkinJikan;
+    private LocalDateTime shukkinJikan;
 
     /**
      * 退勤時間
      */
-    private String taikinJikan;
+    private LocalDateTime taikinJikan;
 
     /**
      * 従業員
@@ -40,7 +42,7 @@ public class ShuttaikinView {
     /**
      * 出勤日
      */
-    private String shukkinbi;
+    private LocalDateTime shukkinbi;
 
     /**
      * 修正理由

@@ -1,6 +1,8 @@
 package actions.views;
 
-import antlr.collections.List;
+import java.util.ArrayList;
+import java.util.List;
+
 import models.Shuttaikin;
 
 /**
@@ -41,7 +43,7 @@ public class ShuttaikinConverter {
             e.getJuugyouin(),
             e.getShukkinbi(),
             e.getShuuseiRiyuu()
-            )
+            );
     }
 
 
@@ -54,7 +56,7 @@ public class ShuttaikinConverter {
 
     public static List<ShuttaikinView> toViewList(List<Shuttaikin>list){
         List<ShuttaikinView> evs = new ArrayList<>();
-        for (Shutttaikin e : List) {
+        for (Shuttaikin e : list) {
             evs.add(toView(e));
         }
 
@@ -71,7 +73,7 @@ public class ShuttaikinConverter {
         e.setShukkinJikan(ev.getShukkinJikan());
         e.setTaikinJikan(ev.getTaikinJikan());
         e.setJuugyouin(ev.getJuugyouin());
-        e.setShukkinbi(ev.getShukkinbi));
+        e.setShukkinbi(ev.getShukkinbi());
         e.setShuuseiRiyuu(ev.getShuuseiRiyuu());
     }
 

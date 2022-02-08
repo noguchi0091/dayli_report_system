@@ -22,8 +22,10 @@
         <h3>【自分の日報　一覧】</h3>
         <table id="report_list">
             <tbody>
+                    <button type="submit">出勤</button>　　 <button type="submit" disabled>退勤 </button>
+
                 <tr>
-                                    <th class="report_name">氏名</th>
+                    <th class="report_name">氏名</th>
                     <th class="report_date">日付</th>
                     <th class="report_title">タイトル</th>
                     <th class="report_action">操作</th>

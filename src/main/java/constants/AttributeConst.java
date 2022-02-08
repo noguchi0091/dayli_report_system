@@ -48,7 +48,18 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content");
+    REP_CONTENT("content"),
+
+    //出退勤管理
+    SHUTTAIKIN("shuttaikin"),
+    SHUT_ID("id"),
+    SHUT_SHUKKIN("shukkin_jikan"),
+    SHUT_TAIKIN("taikin_jikan"),
+    SHUT_NAME("juugyouin"),
+    SHUT_DATE("shukkinbi"),
+    SHUT_RIYUU("shuusei_riyuu"),
+    ;
+
 
     private final String text;
     private final Integer i;
