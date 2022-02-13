@@ -27,4 +27,5 @@ public class ShuttaikinAction extends ActionBase{
                     getRequestParam(AttributeConst.SHUT_RIYUU))
                     ;
     }
+
 }
